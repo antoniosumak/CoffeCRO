@@ -1,0 +1,493 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+/*NAVIGACIJA*/
+section {
+  position: relative;
+}
+.brand h1 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  margin: 0;
+}
+#header .nav-list ul li .zastava {
+  padding: 0 10px;
+}
+
+.brand h1 span {
+  color: #da9666;
+}
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+}
+#header .header {
+  min-height: 8vh;
+  transition: 0.3s ease background-color;
+}
+#header .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  height: 100%;
+  padding: 0 10px;
+}
+#header .nav-list ul {
+  list-style: none;
+  position: absolute;
+  background-color: #da9666;
+  width: 100vw;
+  height: 100vh;
+  left: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow-x: hidden;
+  transition: 0.5s ease left;
+}
+#header .nav-list ul.active {
+  left: 0%;
+}
+#header .nav-list ul a {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 0 20px;
+  display: block;
+}
+#header .nav-list ul a::after {
+  content: attr(data-after);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 8rem;
+  letter-spacing: 50px;
+  z-index: -1;
+  transition: 0.3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after {
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}
+#header .nav-list ul li:hover a {
+  color: #0e8684;
+}
+#header .hamburger {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transform: scale(0.8);
+  margin-right: 20px;
+}
+#header .hamburger:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid white;
+  animation: hamburger_puls 1s ease infinite;
+}
+#header .hamburger .bar {
+  height: 2px;
+  width: 30px;
+  position: relative;
+  background-color: #fff;
+  z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: #fff;
+  transition: 0.3s ease;
+  transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+  top: 8px;
+}
+#header .hamburger .bar::before {
+  bottom: 8px;
+}
+#header .hamburger.active .bar::before {
+  bottom: 0;
+}
+#header .hamburger.active .bar::after {
+  top: 0;
+}
+@keyframes hamburger_puls {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes text_reveal {
+  100% {
+    color: white;
+  }
+}
+@keyframes text_reveal_name {
+  100% {
+    color: crimson;
+    font-weight: 500;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .cta {
+    font-size: 2.5rem;
+    padding: 20px 60px;
+  }
+  h1.section-title {
+    font-size: 5rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  /* header */
+
+  #header .hamburger {
+    display: none;
+  }
+  #header .nav-list ul {
+    position: initial;
+    display: block;
+    height: auto;
+    width: fit-content;
+    background-color: transparent;
+  }
+  #header .nav-list ul li {
+    display: inline-block;
+  }
+  #header .nav-list ul li a {
+    font-size: 15px;
+    color: white;
+  }
+  #header .nav-list ul a:after {
+    display: none;
+  }
+}
+
+.hero {
+  position: relative;
+  background-image: url("slike/heropozadina.jpg");
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  max-width: 55ch;
+}
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 6rem;
+  margin-bottom: 20px;
+}
+.naslovspan {
+  color: #da9666;
+}
+.herotekst {
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  color: #fdfcf7;
+}
+.herogumb {
+  margin-top: 15px;
+  color: white;
+  background-color: #0e8684;
+  padding: 13px 30px;
+  border: none;
+  outline: none;
+}
+.herogumb:hover {
+  cursor: pointer;
+  filter: brightness(150%);
+  transition: 0.4s ease-in-out;
+  color: #2a3139;
+  transform: scale(1.1);
+}
+.onama {
+  margin-top: 100px;
+  position: relative;
+  width: 100%;
+  background-color: #2a3139;
+  display: grid;
+  place-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+h2 {
+  font-size: 3rem;
+
+  color: #fdfcf7;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.onamatekst {
+  text-align: center;
+  max-width: 70ch;
+  line-height: 1.6rem;
+  font-weight: 300;
+  color: white;
+}
+.bijelo {
+  width: 100%;
+  height: 20vh;
+}
+.red {
+  top: 250px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.kartica1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 30px;
+  width: 300px;
+  height: 300px;
+  background-color: #0e8684;
+}
+.kartica2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 30px;
+  width: 300px;
+  height: 300px;
+  background-color: #0e8684;
+  left: 0;
+}
+.kartica3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 30px;
+  width: 300px;
+  height: 300px;
+  background-color: #0e8684;
+  right: 0;
+}
+
+.ikona {
+  font-size: 2.3rem;
+  color: white;
+  margin-bottom: 15px;
+}
+.karticatekst h2 {
+  font-size: 1.6rem;
+  top: 0;
+  padding: 0;
+}
+.karticatekst p {
+  text-align: center;
+  padding: 0 30px;
+  color: white;
+  font-weight: 300;
+}
+.proizvodi {
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.karticaproizvod {
+  position: relative;
+  min-height: 400px;
+  width: 300px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 0 30px;
+}
+.cijena {
+  position: absolute;
+  color: white;
+  background-color: #0e8684;
+  padding: 15px 25px;
+  border: none;
+  outline: none;
+  margin-top: -20px;
+  margin-left: 100px;
+}
+.cijena:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+  color: #2a3139;
+  filter: brightness(120%);
+}
+.kava {
+  margin-left: 80px;
+  margin-top: 20px;
+}
+.kava1 {
+  margin-left: 60px;
+  margin-top: 20px;
+}
+.proizvodi h2 {
+  color: #2a3139;
+  margin-bottom: 100px;
+}
+.karticaproizvod h2 {
+  font-size: 1.6rem;
+  padding-top: 20px;
+  margin-bottom: 0;
+}
+.karticaproizvod p {
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 10px;
+  line-height: 1.2rem;
+}
+.roast {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.kontakt {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  background-image: url("slike/nathan-dumlao-KixfBEdyp64-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  place-items: center;
+}
+.forma {
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 10px 10px;
+  margin: 10px 0px;
+}
+textarea {
+  margin-top: 10px;
+}
+textarea::placeholder {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+input,
+textarea {
+  border: none;
+}
+.send {
+  width: 100px;
+  margin-top: 20px;
+  padding: 7px 5px;
+  color: white;
+  background-color: #0e8684;
+  border: none;
+  outline: none;
+}
+.send:hover {
+  cursor: pointer;
+  filter: brightness(120%);
+  color: #2a3139;
+  transform: scale(1.05);
+  transition: 0.2s ease-in-out;
+}
+label {
+  color: white;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+  .karticaproizvod {
+    margin: 20px 0px;
+  }
+  .kartica1,
+  .kartica2,
+  .kartica3 {
+    margin: 15px 0px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .herotekst {
+    font-size: 0.7rem;
+  }
+  .onamatekst {
+    font-size: 0.8rem;
+  }
+}
