@@ -308,6 +308,9 @@ h2 {
   font-weight: 300;
   color: white;
 }
+.onamatekst a {
+  color: white;
+}
 .bijelo {
   width: 100%;
   height: 20vh;
