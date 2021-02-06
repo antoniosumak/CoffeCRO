@@ -24,7 +24,17 @@
         <div class="header container">
           <div class="nav-bar">
             <div class="brand">
-              <h1><span class="title">Coffee</span>CRO</h1>
+              <h1>
+                <span class="vidljivo"
+                  ><img
+                    class="slikavidljivo"
+                    src="slike/logo.png"
+                    alt="logo"
+                    width="150px"
+                    height="70px"
+                  /><span class="title">Coffee</span>CRO</span
+                >
+              </h1>
             </div>
             <div class="nav-list">
               <div class="hamburger"><div class="bar"></div></div>
@@ -39,10 +49,13 @@
                   <a class="slova" href="#proizvodi">Proizvodi</a>
                 </li>
                 <li>
-                  <a class="slova" href="#">Galerija</a>
+                  <a class="slova" href="galerija.html">Galerija</a>
                 </li>
                 <li>
                   <a class="slova" href="#kontakt">Kontakt</a>
+                </li>
+                <li>
+                  <a class="slova" href="#newsletter">Newsletter</a>
                 </li>
               </ul>
             </div>
@@ -60,7 +73,7 @@
           pravo mjesto za Vas! Kod nas možete pronaći sve što Vam treba za
           priremu kave, te ono najbitnije... zrna kave.
         </p>
-        <button class="herogumb">Na proizvode</button>
+        <a href="#proizvodi"><button class="herogumb">Na proizvode</button></a>
       </div>
     </section>
     <section id="onama" class="onama">
@@ -106,6 +119,9 @@
           </div>
         </div>
       </div>
+      <a class="vise" href="onama.html"
+        ><button class="viseonama">Vise o nama</button></a
+      >
     </section>
     <section class="bijelo"></section>
     <section id="proizvodi" class="proizvodi">
@@ -326,5 +342,18 @@
         <button class="send">Pošalji</button>
       </div>
     </section>
+    <footer id="newsletter">
+      <div class="col1index">
+        <p>Ime vlasnice: Elena Mikulić</p>
+        <p>Broj telefona: +385 98-123-4567</p>
+        <p>Adresa: Ul. Vladimira Nazora 2, 42000 Varaždin</p>
+        <p>Email adresa:support@coffeecro.com</p>
+      </div>
+      <div class="col2index">
+        <label for="">Pretplati se na newsletter</label>
+        <input type="text" placeholder="E-mail adresa" />
+        <button class="pretplati">Pretplati se</button>
+      </div>
+    </footer>
   </body>
 </html>
