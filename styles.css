@@ -324,6 +324,9 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+.autorska {
+  margin-top: 20px;
+}
 .kartica1 {
   display: flex;
   flex-direction: column;

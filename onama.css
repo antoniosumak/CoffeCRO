@@ -257,6 +257,9 @@ h1 {
   width: 100%;
   height: 100%;
 }
+.svglogo {
+  margin-left: 50px;
+}
 @media screen and (max-width: 1200px) {
   .vidljivo {
     visibility: hidden;
